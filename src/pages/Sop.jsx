@@ -6,7 +6,7 @@ const Sop = () => {
     return (
         <>
             <Header />
-            <div className="px-16 py-20 w-full max-w-5xl mx-auto">
+            <div className="px-6 lg:px-16 py-20 w-full max-w-5xl mx-auto">
                 <h2 className="font-bold text-2xl mb-6 text-gray-800">
                     General Standard Operating Procedure
                 </h2>
