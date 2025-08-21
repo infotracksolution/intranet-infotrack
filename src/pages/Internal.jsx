@@ -6,9 +6,9 @@ const Internal = () => {
     return (
         <>
             <Header />
-            <section className="px-16 py-20 w-full max-w-5xl mx-auto">
+            <section className="px-6 lg:px-16 py-8 lg:py-20 w-full max-w-5xl mx-auto">
                 <h1 className="text-2xl font-bold pb-4 text-gray-800">Internal Rules</h1>
-                <p className="pb-4 pt-10 text-gray-500">
+                <p className="pb-4 pt-6 lg:pt-10 text-gray-500">
                     <strong className="text-gray-800">Food and Drink Policy:</strong> To maintain a clean and professional workspace and ensure everyone's comfort and safety, we ask all employees to adhere to the following rule regarding food and beverages: 
                 </p>
                 <ul className="px-10 flex flex-col gap-2 list-disc text-gray-500">
