@@ -17,10 +17,29 @@ const Documents = () => {
     const [ externals, setExternals ] =  useState([])
     const [ others, setOthers ] =  useState([])
 
+    const [user, setUser] = useState(null)
+
     useEffect(() => {
         getInternals()
         getExternals()
         getOthers()
+        // Obtenemos el usuario actual al cargar el componente
+        const getUser = async () => {
+            const { data: { user } } = await supabase.auth.getUser()
+            setUser(user)
+        }
+
+        getUser()
+
+        // Escuchamos cambios de sesión para detectar login/logout
+        const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
+        setUser(session?.user ?? null)
+        })
+
+        return () => {
+        authListener.subscription.unsubscribe()
+        }
+
     }, [])
 
     async function getInternals(){
@@ -57,7 +76,9 @@ const Documents = () => {
         <>
             <Header />
                 <div className="w-full max-w-7xl min-h-[calc(100dvh-128px)] m-auto p-6">
-                    <button onClick={() => {setShowForm(true)}} className="h-10 rounded-md border-1 border-solid border-blue-500 bg-blue-500 text-gray-100 px-4">Add new document</button>
+                    {user && (
+                        <button onClick={() => {setShowForm(true)}} className="h-10 rounded-md border-1 border-solid border-blue-500 bg-blue-500 text-gray-100 px-4 cursor-pointer">Add new document</button>
+                    )}
                     <div className="flex flex-col gap-4 py-8">
                         <div className="flex flex-col gap-6">
                             <h2 className="font-bold text-xl">Internal Documents</h2>

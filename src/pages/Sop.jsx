@@ -8,7 +8,7 @@ const Sop = () => {
             <Header />
             <div className="px-6 lg:px-16 py-8 lg:py-20 w-full max-w-5xl mx-auto">
                 <h2 className="font-bold text-2xl mb-6 text-gray-800">
-                    General Standard Operating Procedure
+                     Standard Operating Procedure
                 </h2>
                 <div>
                     <h3 className="font-bold text-lg my-2 text-gray-800">Normal Day</h3>

@@ -23,8 +23,27 @@ const Schedule = () => {
     const [ schedule, setSchedule ] =  useState([])
     const [ targetDate, setTargetDate ] = useState(todayDate)
 
+    const [user, setUser] = useState(null)
+
     useEffect(() => {
         getSchedule()
+        // Obtenemos el usuario actual al cargar el componente
+        const getUser = async () => {
+            const { data: { user } } = await supabase.auth.getUser()
+            setUser(user)
+        }
+
+        getUser()
+
+        // Escuchamos cambios de sesión para detectar login/logout
+        const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
+        setUser(session?.user ?? null)
+        })
+
+        return () => {
+        authListener.subscription.unsubscribe()
+        }
+
     }, [])
 
     const getSchedule = async () => {
@@ -50,7 +69,9 @@ const Schedule = () => {
         <>
             <Header />
                 <div className="w-full max-w-7xl min-h-[calc(100dvh-128px)] m-auto p-6">
-                    <button onClick={() => {setShowForm(true)}} className="h-10 rounded-md border-1 border-solid border-blue-500 bg-blue-500 text-gray-100 px-4">Add new task</button>
+                    {user && (
+                        <button onClick={() => {setShowForm(true)}} className="h-10 rounded-md border-1 border-solid border-blue-500 bg-blue-500 text-gray-100 px-4 cursor-pointer">Add new task</button>
+                    )}
                     <div className="flex flex-col gap-4 py-8">
                         <div className="flex flex-col gap-6">
                             <h2 className="font-bold text-xl">Schedule for Today</h2>
@@ -66,8 +87,10 @@ const Schedule = () => {
                                                 <p className="font-bold text-gray-800 text-lg">Status: {task.status}</p>
                                             </div>
                                             <div className="w-full flex justify-end gap-2">
-                                                <button className="py-1 px-6 border-1 border-solid border-green-600 text-green-600 bg-green-300 font-bold rounded-md hover:bg-green-600 hover:text-white cursor-pointer">Edit</button>
-                                                <button className="py-1 px-6 border-1 border-solid border-red-600 text-red-600 bg-red-300 font-bold rounded-md hover:bg-red-600 hover:text-white cursor-pointer">Delete</button>
+                                                {
+                                                    //<button className="py-1 px-6 border-1 border-solid border-green-600 text-green-600 bg-green-300 font-bold rounded-md hover:bg-green-600 hover:text-white cursor-pointer">Edit</button>
+                                                    //<button className="py-1 px-6 border-1 border-solid border-red-600 text-red-600 bg-red-300 font-bold rounded-md hover:bg-red-600 hover:text-white cursor-pointer">Delete</button>
+                                                }
                                             </div>
                                         </li>
                                     ))
