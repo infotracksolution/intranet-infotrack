@@ -8,6 +8,7 @@ import Documents from './pages/Documents.jsx'
 import Schedule from './pages/Schedule.jsx'
 import Internal from './pages/Internal.jsx'
 import Admin from './pages/Admin.jsx'
+import Tutorials from './pages/Tutorials.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -19,7 +20,8 @@ createRoot(document.getElementById('root')).render(
       <Route path='/rules' element={<Internal />} />
       <Route path='/documents' element={<Documents />}/>
       <Route path='/admin' element={<Admin />} />
+      <Route path='/tutorials' element={<Tutorials />} />
       <Route path='*' element={<App />}/>
     </Routes>
-  </BrowserRouter>,
+  </BrowserRouter>
 )

@@ -39,6 +39,7 @@ const Header = () => {
                         <li><a href="/workers" className="hover:text-blue-500 transition">Workers</a></li>
                         <li><a href="/rules" className="hover:text-blue-500 transition">Internal Rules</a></li>
                         <li><a href="/documents" className="hover:text-blue-500 transition">Documents</a></li>
+                        <li><a href="/tutorials" className="hover:text-blue-500 transition">Tutorials</a></li>
                     </ul>
                     {user && (
                             <button className="bg-blue-500 rounded-md text-white px-4 py-1 cursor-pointer" onClick={async () => {
