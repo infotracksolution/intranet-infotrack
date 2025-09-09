@@ -9,6 +9,8 @@ import Schedule from './pages/Schedule.jsx'
 import Internal from './pages/Internal.jsx'
 import Admin from './pages/Admin.jsx'
 import Tutorials from './pages/Tutorials.jsx'
+import Task from './pages/Task.jsx'
+import AddTask from './pages/AddTask.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -21,6 +23,8 @@ createRoot(document.getElementById('root')).render(
       <Route path='/documents' element={<Documents />}/>
       <Route path='/admin' element={<Admin />} />
       <Route path='/tutorials' element={<Tutorials />} />
+      <Route path='/task/:id' element={<Task />} />
+      <Route path='/addtask' element={<AddTask />} />
       <Route path='*' element={<App />}/>
     </Routes>
   </BrowserRouter>
