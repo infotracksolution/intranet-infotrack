@@ -66,7 +66,7 @@ const Schedule = () => {
                                 <button className="h-10 rounded-md border-1 border-solid border-blue-500 bg-blue-500 text-gray-100 px-4 cursor-pointer">Add new task</button>
                             </a>
                             <div className="py-4 flex items-center gap-4">
-                                <label>Selecciona una fecha: </label>
+                                <label>Select date: </label>
                                 <input
                                     type="date"
                                     value={dateTarget}
@@ -77,7 +77,7 @@ const Schedule = () => {
                     )}
                     <div className="flex flex-col gap-4 py-4">
                         <div className="flex flex-col gap-6">
-                            <h2 className="font-bold text-xl">Schedule List</h2>
+                            <h2 className="font-bold text-xl">Schedule List for {dateTarget} </h2>
                             <ul className="w-full">
                                 {schedule.length === 0 ? (
                                     <p className="text-gray-600">No tasks for this day</p>
