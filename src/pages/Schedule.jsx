@@ -102,7 +102,6 @@ const Schedule = () => {
                                                             )}
                                                         </ul>
                                                         <p className="font-bold text-gray-800 text-lg">Status: {task.status}</p>
-                                                        <p className="font-bold text-gray-800 text-lg">Comments: 0</p>
                                                     </div>
                                                     <div className="w-full flex justify-end gap-2">
                                                         <Link to={`/task/${task.id}`}>

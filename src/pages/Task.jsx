@@ -80,18 +80,18 @@ const Task = () => {
                         <button className="cursor-pointer min-w-fit border-solid border-1 border-blue-500 rounded-md px-6 py-1 text-blue-500">Edit Task</button>
                     </div>
                     <p className="font-bold text-lg text-gray-800">Description:</p>
-                    <p className="text-gray-800 text-lg whitespace-pre-line">{task.description}</p>
+                    <p className="text-gray-800 text-lg whitespace-pre-line pl-4">{task.description}</p>
                     <p className="font-bold text-lg text-gray-800">Date:</p>
-                    <p>{task.date}</p>
+                    <p className="pl-4">{task.date}</p>
                     <p className="font-bold text-lg text-gray-800">Start Time:</p>
-                    <p>{task.start}</p>
+                    <p className="pl-4">{task.start}</p>
                     <p className="font-bold text-lg text-gray-800">End Time:</p>
-                    <p>{task.end}</p>
+                    <p className="pl-4">{task.end}</p>
                     <p className="text-gray-800 text-lg whitespace-pre-line font-bold">Technician:</p>
                     <ul className="list-disc list-inside">
                         {task.technicians && task.technicians.length > 0 ? (
                             task.technicians.map((tech) => (
-                                <li key={tech}>{tech}</li>
+                                <li className="pl-4" key={tech}>{tech}</li>
                             ))
                         ) : (
                             <li>No technicians asigned yet</li>
