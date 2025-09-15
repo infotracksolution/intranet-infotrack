@@ -58,13 +58,14 @@ const AddTask = () => {
         <div className="w-full flex items-center justify-center py-12">
             <div className="w-full max-w-xl flex flex-col gap-2 py-6 px-6 text-center bg-gray-100 rounded-md">
                 <p className="font-bold text-2xl">Add a new task</p>
+                <p>All the field with * symbol are mandatory</p>
                 <form onSubmit={handleTask} className="flex flex-col items-start gap-2 py-8">
-                    <label htmlFor="title">Name:</label>
+                    <label htmlFor="title">*Name:</label>
                     <input 
                         type="text" 
                         name="title" 
                         id="title" 
-                        placeholder="Example template"
+                        placeholder="Task name"
                         onChange={(e) => setName(e.target.value)}
                         className="w-full h-8 border-1 border-solid border-blue-500 rounded pl-2"
                         required
@@ -73,12 +74,12 @@ const AddTask = () => {
                     <textarea 
                         name="description" 
                         id="description" 
-                        placeholder="Example template"
+                        placeholder="Task description"
                         onChange={(e) => setDescription(e.target.value)}
                         className="w-full h-24 border-1 border-solid border-blue-500 rounded pl-2"
                     >
                     </textarea>
-                    <label htmlFor="date">Date:</label>
+                    <label htmlFor="date">*Date:</label>
                     <input 
                         type="date" 
                         name="date" 
@@ -86,7 +87,7 @@ const AddTask = () => {
                         onChange={(e) => setDate(e.target.value)}
                         className="w-full h-8 border-1 border-solid border-blue-500 rounded pl-2"
                     />
-                    <label htmlFor="start">Start time:</label>
+                    <label htmlFor="start">*Start time:</label>
                     <input 
                         type="time" 
                         name="start" 
@@ -94,7 +95,7 @@ const AddTask = () => {
                         onChange={(e) => setStart(e.target.value)}
                         className="w-full h-8 border-1 border-solid border-blue-500 rounded pl-2"
                     />
-                    <label htmlFor="end">End time:</label>
+                    <label htmlFor="end">*End time:</label>
                     <input 
                         type="time" 
                         name="end" 
@@ -102,7 +103,7 @@ const AddTask = () => {
                         onChange={(e) => setEnd(e.target.value)}
                         className="w-full h-8 border-1 border-solid border-blue-500 rounded pl-2"
                     />
-                    <label htmlFor="status">Status:</label>
+                    <label htmlFor="status">*Status:</label>
                     <select 
                         defaultValue={status} 
                         onChange={(e) => setStatus(e.target.value)}
