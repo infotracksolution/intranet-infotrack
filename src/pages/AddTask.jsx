@@ -112,9 +112,9 @@ const AddTask = () => {
                         id="status"
                     >
                         <option value=""></option>
-                        <option value="new">New</option>
-                        <option value="inprogress">In Progress</option>
-                        <option value="close">Close</option>
+                        <option value="New">New</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Close">Close</option>
                     </select>
                     <label htmlFor="dwo">DWO Number:</label>
                     <input 
