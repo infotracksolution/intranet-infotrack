@@ -77,7 +77,7 @@ const Task = () => {
                     <a href="/schedule" className="text-blue-500 font-bold mb-8 text-lg">⬅ Go back</a>
                     <div className="flex items-center justify-between">
                         <h1 className="text-gray-800 text-2xl font-bold">{task.name}</h1>
-                        <button className="cursor-pointer min-w-fit border-solid border-1 border-blue-500 rounded-md px-6 py-1 text-blue-500">Edit Task</button>
+                        {/*<button className="cursor-pointer min-w-fit border-solid border-1 border-blue-500 rounded-md px-6 py-1 text-blue-500">Edit Task</button>*/}
                     </div>
                     <p className="font-bold text-lg text-gray-800">Description:</p>
                     <p className="text-gray-800 text-lg whitespace-pre-line pl-4">{task.description}</p>
