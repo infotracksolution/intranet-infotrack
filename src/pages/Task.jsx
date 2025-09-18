@@ -96,7 +96,7 @@ const Task = () => {
                     <div className="flex items-center justify-between">
                         <h1 className="text-gray-800 text-2xl font-bold">{task.name}</h1>
                         {user && (
-                            <button className="cursor-pointer min-w-fit border-solid border-1 border-blue-500 rounded-md px-4 py-1 text-blue-500 hover:bg-blue-500 hover:text-gray-50">Done</button>
+                            <button className="cursor-pointer min-w-fit border-solid border-1 border-blue-500 rounded-md px-4 py-1 text-blue-500 hover:bg-blue-500 hover:text-gray-50 text-md">Done</button>
                         )}
                     </div>
                     <p className="font-bold text-lg text-gray-800">Description:</p>
