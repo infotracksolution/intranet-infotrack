@@ -10,7 +10,21 @@ const Sop = () => {
                 <h2 className="font-bold text-2xl mb-6 text-gray-800">
                      Standard Operating Procedures
                 </h2>
-                <h3 id="normal" className="font-bold text-xl mb-2 text-gray-800">Normal day procedure</h3>
+                <div className="my-6">
+                    <h3 id="normal" className="font-bold text-xl mb-2 text-gray-800 border-b-1 border-b-solid border-b-gray-400">Summary</h3>
+                    <ul className="list-disc list-inside text-blue-500 ml-4">
+                        <li>
+                            <a href="#normal">Normal day procedure</a>
+                        </li>
+                        <li>
+                            <a href="#leave">Request for Leave</a>
+                        </li>
+                        <li>
+                            <a href="#ticket">Infotrack ticketing workflow</a>
+                        </li>
+                    </ul>
+                </div>
+                <h3 id="normal" className="font-bold text-xl mb-2 text-blue-500 border-b-1 border-b-solid border-b-gray-400">Normal day procedure</h3>
                 <div>
                     <p className="pl-4 text-gray-500">
                         <strong className="pr-6 text-gray-800">
@@ -132,8 +146,7 @@ const Sop = () => {
                         If an emergency situation occurs, it doesn't matter if it is personal or work related, immediately alert the team through whatsapp or call them.
                     </p>
                 </div>
-
-                <h3 id="leave" className="font-bold text-xl mt-12 mb-2 text-gray-800">Request for Leave</h3>
+                <h3 id="leave" className="font-bold text-xl mt-12 mb-2 text-blue-500 border-b-1 border-b-solid border-b-gray-400">Request for Leave</h3>
                 <p className="my-2 font-bold text-gray-800 text-lg">
                     1. Leave Entitlement:
                 </p>
@@ -192,7 +205,7 @@ const Sop = () => {
                     - If work is delayed, employees are required to catch up after working hours if necessary.
                 </p>
 
-                <h3 id="leave" className="font-bold text-xl mt-12 mb-2 text-gray-800 capitalize">Infotrack ticketing workflow</h3>
+                <h3 id="ticket" className="font-bold text-xl mt-12 mb-2 text-blue-500 border-b-1 border-b-solid border-b-gray-400">Infotrack ticketing workflow</h3>
                 <p className="my-2 font-bold text-gray-800 text-lg">
                     1. Purpose
                 </p>
